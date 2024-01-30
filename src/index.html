@@ -42,14 +42,6 @@
 
     <!-- This is where you would add any app specific styling -->
     <link rel="stylesheet" href="css/app.css" type="text/css"/>
-    <style>
-              .full-screen-content {
-            width: 100vw;
-            height: 100vh;
-            box-sizing: border-box;
-            padding: 20px;
-        }
-    </style>
 
   </head>
   <body class="oj-web-applayout-body">
@@ -94,7 +86,7 @@
            ** on the JET website for more information on how to use this pattern.
         -->
         <header role="banner" class="oj-web-applayout-header">
-          <div class="oj-web-applayout-headder oj-flex-bar oj-sm-align-items-center">
+          <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
             <!-- Drawer toggle button -->
             <div class="oj-flex-bar-start oj-md-hide">
               <oj-button id="drawerToggleButton" class="oj-button-lg" on-oj-action="[[toggleDrawer]]" chroming="borderless" display="icons">
@@ -125,7 +117,7 @@
               </oj-toolbar>
             </div>
           </div>
-          <div role="navigation" class="oj-web-applayout-headder oj-web-applayout-navbar">
+          <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
             <oj-navigation-list id="navTabBar" class="oj-sm-only-hide oj-md-condense oj-md-justify-content-flex-end"
                                 data="[[navDataProvider]]"
                                 edge="top"
@@ -134,7 +126,7 @@
             </oj-navigation-list>
           </div>
         </header>
-        <oj-module role="main" class="oj-web-applayout-headder oj-web-applayout-content" config="[[moduleAdapter.koObservableConfig]]">
+        <oj-module role="main" class="oj-web-applayout-max-width oj-web-applayout-content" config="[[moduleAdapter.koObservableConfig]]">
         </oj-module>
         <footer class="oj-web-applayout-footer" role="contentinfo">
           <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
