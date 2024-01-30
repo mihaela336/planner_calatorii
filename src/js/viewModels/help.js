@@ -8,11 +8,11 @@
 /*
  * Your Help ViewModel code goes here
  */
-define(['../accUtils'],
+define(['../accUtils', "knockout", "ojs/ojknockout", "ojs/ojcheckboxset", "ojs/ojcollapsible"],
 
 // define(['../accUtils',"knockout",
 // "ojs/ojknockout", "ojs/ojcheckboxset"],
- function(accUtils) {
+ function(accUtils, ko) {
     function HelpViewModel() {
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
@@ -26,13 +26,7 @@ define(['../accUtils'],
        * after being disconnected.
        */
  
-        // this.checkValue = ko.observableArray();
-        // this.dircolumn = ko.pureComputed(() => {
-        //     return !!(typeof this.checkValue()[0] !== "undefined" &&
-        //         this.checkValue()[0] != null &&
-        //         this.checkValue()[0] === "dirColumn");
-        // });
-    
+
 
       this.connected = () => {
         accUtils.announce('Help page loaded.', 'assertive');

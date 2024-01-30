@@ -3,28 +3,453 @@
  Licensed under The Universal Permissive License (UPL), Version 1.0
  as shown at https://oss.oracle.com/licenses/upl/
  -->
-<!-- <div class="oj-hybrid-padding"> -->
-  <!-- <doctype html>
-  <head>
-    <style>
-    h1 {
-      text-align: center;
-    }
-    </style>
-    </head> -->
-
-
-
-
+<div class="oj-hybrid-padding">
+  <h1>How can we help you?</h1>
   <div>
-  <h1>About Content Area</h1>
-  <div>
-<div class="oj-flex">
-  <div class="oj-flex-item oj-panel oj-bg-success-10">item1</div>
-  <div class="oj-flex-item oj-panel ">item1</div>
-  <div class="oj-flex-item oj-panel">item1</div>
-  
-</div>
-  
-</div>
+    Find all you need to know about the app, electric vehicles and EV charging right here.
+  </div>
+  <div id="container">
+    <div class="oj-flex demo-flex-display" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+      <div class="oj-flex-item oj-panel oj-sm-margin-4x-vertical">
+        <h2>Frequently asked questions</h2>
+        <h3>About EVs, Route Planner features & your account</h3>
+        Electric vehicles and EV charging can at first appear a little confusing.
+        Here we answer some of your most frequently asked questions.
+        From questions about Route Planner, payment or wider questions about electric cars and charging them, we've got
+        you covered.
+
+      </div>
+    </div>
+
+    <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+      <div class="oj-flex-item oj-panel oj-sm-margin-4x-vertical">
+        
+        <div class="oj-flex oj-sm-flex-items-1" :class="[[{'oj-sm-flex-wrap-nowrap': nowrap()}]]">
+          <!-- Route planner container -->
+          <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+            <h4>Route Planner</h4>
+            <h5>FAQs</h5>
+
+            <!-- Learn More collapsible -->
+            <div id="collapsiblePage" data-oj-binding-provider="none">
+              <oj-collapsible id="LearnMoreCollapsible">
+                <p slot="header">Learn More </p>
+
+                <!-- Question 1 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">What is the Route Planner? </h6>
+                      <p>The Route Planner allows electric vehicle (EV) drivers to plan a route in
+                        their electric car based on journey parameters,
+                        EV models and driver options. There are three different routing modes: Autoroute, Suggest
+                        chargers and Show all chargers.
+                        Routes can be saved and retrieved within the mobile app or in-car system.</p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 1 -->
+
+                <!-- Question 2 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How many routes can I save? </h6>
+                      <p>As a standard registered user you can save three route plans.
+                        With Route Planner Premium you can save unlimited routes. Perfect for people who travel a lot!
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 2 -->
+
+                <!-- Question 3 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">Can I delete my route plan? </h6>
+                      <p>Routes can be deleted in the app by tapping the trashcan symbol or by swiping left on a route
+                        plan. On the desktop, click on "Delete".
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 3 -->
+
+              </oj-collapsible>
+            </div> <!-- end of Learn More collapsible -->
+          </div><!-- end of Route planner container -->
+
+                  <!-- Payment container -->
+          <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+            <h4>Payment</h4>
+            <h5>FAQs</h5>
+
+            <!-- Learn More collapsible -->
+            <div id="collapsiblePage" data-oj-binding-provider="none">
+              <oj-collapsible id="LearnMoreCollapsible">
+                <p slot="header">Learn More </p>
+
+                <!-- Question 1 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How does Route-Pay work? </h6>
+                      <p>
+                        Rap-Pay is an app-based payment system that uses a credit or debit card to pay for charging.
+                        The process is simple for the user and is part of the standard check-in process on Route Planner. 
+                        On a Route-Pay payment-enabled point, the user selects the charger from within the app,
+                         selects the credit / debit card and starts charging.
+
+                        </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 1 -->
+
+                <!-- Question 2 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How do I pay for charging via Route Planner? </h6>
+                      <p>When you're at the charge point, open the charge point within the app, select a connector, 
+                        select Route-Pay as the payment method and the card you would like to use, and start charging.
+                        Once your charging session is complete, you will be sent a VAT receipt,
+                         and if you are a registered user this will also be stored within your Route Planner account.
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 2 -->
+
+                <!-- Question 3 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">Do I need to be registered to use Route-Pay? </h6>
+                      <p>
+                        No, there is no need for any membership or subscription to use Route-Pay. 
+                        If you use Route-Pay with the free account, you will have a more streamlined process, 
+                        be able to save cards and view your full charging history.
+                        There is also a guest option available that does not require registration.
+                        
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 3 -->
+
+                <!-- Question 4 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How do I add my debit/credit card to Route-Pay? </h6>
+                      <p>To add a debit/credit card to use Route-Pay is quite simple: 
+                        sign in to the app, go to Settings in the bottom right corner (on iOS) or click on the hamburger icon 
+                        in the top left-hand corner (on Android), click 'Route-Pay cards' then click the plus sign 
+                        in the top right-hand corner and follow instructions to add your card.
+                        You can store multiple cards and remove cards you no longer need if logged in.
+                         There will be a pre-authorisation charge of 5p per card, which will be returned to you by your bank.
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+               <!-- end of Question 4 -->
+               
+                <!-- Question 5 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How can I see my receipts? </h6>
+                      <p>If using Route-Pay while logged in, the receipt from charging will be stored within your account,
+                         which you can then view, and it will also be emailed to you.
+                         Guest users will have the receipt emailed to the specified email address.
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 5 -->
+              </oj-collapsible>
+            </div> <!-- end of Learn More collapsible -->
+          </div><!-- end of Payment container -->
+
+           <!-- Account container -->
+           <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+            <h4>Account</h4>
+            <h5>FAQs</h5>
+
+            <!-- Learn More collapsible -->
+            <div id="collapsiblePage" data-oj-binding-provider="none">
+              <oj-collapsible id="LearnMoreCollapsible">
+                <p slot="header">Learn More </p>
+
+                <!-- Question 1 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How do I register with Zapmap? </h6>
+                      <p>To register and set up an account with Zapmap go to the account menu and select 'Sign in/Register.
+                         Complete and submit all the requested details on the forms provided.
+                        You will then receive an activation email from us (if you haven't received an email, please check your spam folder). 
+                        Follow the activation link to complete your registration. Use your email or username and password to log in..</p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 1 -->
+
+                <!-- Question 2 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How do I update my account details? </h6>
+                      <p>To update your account details log into your Zapmap account, select 'Your profile' in the account menu 
+                        and make the relevant changes, then press 'Update'.
+                        Email addresses can be changed by emailing us direct with the request to support@zap-map.com.
+                         When you receive a confirmation email, there will also be an option to 'Update subscription preferences'.
+                          Once completed, we will send you an email us to confirm that your email address has been updated.
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 2 -->
+
+                <!-- Question 3 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How do I update my account password? </h6>
+                      <p>To change your password, log in and select 'Your profile' in the account menu,
+                         change your password, then press 'Update'.
+
+                        Alternatively, use the 'Lost your password?'' link at the bottom of the login page. 
+                        You will then receive an email from us with a link to update your password. If you haven't received an email, please check your spam folder.
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 3 -->
+
+              </oj-collapsible>
+            </div> <!-- end of Learn More collapsible -->
+          </div><!-- end of Account container -->
+        </div>
+
+
+        <div class="oj-flex oj-sm-flex-items-1" :class="[[{'oj-sm-flex-wrap-nowrap': nowrap()}]]">
+          <!-- Electric vehicle container -->
+          <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+            <h4>Electric vehicle</h4>
+            <h5>FAQs</h5>
+
+            <!-- Learn More collapsible -->
+            <div id="collapsiblePage" data-oj-binding-provider="none">
+              <oj-collapsible id="LearnMoreCollapsible">
+                <p slot="header">Learn More </p>
+
+                <!-- Question 1 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">What is the Route Planner? </h6>
+                      <p>The Route Planner allows electric vehicle (EV) drivers to plan a route in
+                        their electric car based on journey parameters,
+                        EV models and driver options. There are three different routing modes: Autoroute, Suggest
+                        chargers and Show all chargers.
+                        Routes can be saved and retrieved within the mobile app or in-car system.</p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 1 -->
+
+                <!-- Question 2 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How many routes can I save? </h6>
+                      <p>As a standard registered user you can save three route plans.
+                        With Route Planner Premium you can save unlimited routes. Perfect for people who travel a lot!
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 2 -->
+
+                <!-- Question 3 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">Can I delete my route plan? </h6>
+                      <p>Routes can be deleted in the app by tapping the trashcan symbol or by swiping left on a route
+                        plan. On the desktop, click on "Delete".
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 3 -->
+
+              </oj-collapsible>
+            </div> <!-- end of Learn More collapsible -->
+          </div><!-- end of Electric vehicle container -->
+
+                  <!-- EV charging container -->
+          <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+            <h4>EV charging</h4>
+            <h5>FAQs</h5>
+
+            <!-- Learn More collapsible -->
+            <div id="collapsiblePage" data-oj-binding-provider="none">
+              <oj-collapsible id="LearnMoreCollapsible">
+                <p slot="header">Learn More </p>
+
+                <!-- Question 1 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How does Route-Pay work? </h6>
+                      <p>
+                        Rap-Pay is an app-based payment system that uses a credit or debit card to pay for charging.
+                        The process is simple for the user and is part of the standard check-in process on Route Planner. 
+                        On a Route-Pay payment-enabled point, the user selects the charger from within the app,
+                         selects the credit / debit card and starts charging.
+
+                        </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 1 -->
+
+                <!-- Question 2 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How do I pay for charging via Route Planner? </h6>
+                      <p>When you're at the charge point, open the charge point within the app, select a connector, 
+                        select Route-Pay as the payment method and the card you would like to use, and start charging.
+                        Once your charging session is complete, you will be sent a VAT receipt,
+                         and if you are a registered user this will also be stored within your Route Planner account.
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 2 -->
+
+                <!-- Question 3 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">Do I need to be registered to use Route-Pay? </h6>
+                      <p>
+                        No, there is no need for any membership or subscription to use Route-Pay. 
+                        If you use Route-Pay with the free account, you will have a more streamlined process, 
+                        be able to save cards and view your full charging history.
+                        There is also a guest option available that does not require registration.
+                        
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 3 -->
+
+                <!-- Question 4 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How do I add my debit/credit card to Route-Pay? </h6>
+                      <p>To add a debit/credit card to use Route-Pay is quite simple: 
+                        sign in to the app, go to Settings in the bottom right corner (on iOS) or click on the hamburger icon 
+                        in the top left-hand corner (on Android), click 'Route-Pay cards' then click the plus sign 
+                        in the top right-hand corner and follow instructions to add your card.
+                        You can store multiple cards and remove cards you no longer need if logged in.
+                         There will be a pre-authorisation charge of 5p per card, which will be returned to you by your bank.
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+               <!-- end of Question 4 -->
+               
+                <!-- Question 5 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How can I see my receipts? </h6>
+                      <p>If using Route-Pay while logged in, the receipt from charging will be stored within your account,
+                         which you can then view, and it will also be emailed to you.
+                         Guest users will have the receipt emailed to the specified email address.
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 5 -->
+              </oj-collapsible>
+            </div> <!-- end of Learn More collapsible -->
+          </div><!-- end of EV charging container -->
+
+           <!-- EV charging Europe container -->
+           <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+            <h4>EV charging Europe</h4>
+            <h5>FAQs</h5>
+
+            <!-- Learn More collapsible -->
+            <div id="collapsiblePage" data-oj-binding-provider="none">
+              <oj-collapsible id="LearnMoreCollapsible">
+                <p slot="header">Learn More </p>
+
+                <!-- Question 1 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How do I register with Zapmap? </h6>
+                      <p>To register and set up an account with Zapmap go to the account menu and select 'Sign in/Register.
+                         Complete and submit all the requested details on the forms provided.
+                        You will then receive an activation email from us (if you haven't received an email, please check your spam folder). 
+                        Follow the activation link to complete your registration. Use your email or username and password to log in..</p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 1 -->
+
+                <!-- Question 2 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How do I update my account details? </h6>
+                      <p>To update your account details log into your Zapmap account, select 'Your profile' in the account menu 
+                        and make the relevant changes, then press 'Update'.
+                        Email addresses can be changed by emailing us direct with the request to support@zap-map.com.
+                         When you receive a confirmation email, there will also be an option to 'Update subscription preferences'.
+                          Once completed, we will send you an email us to confirm that your email address has been updated.
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 2 -->
+
+                <!-- Question 3 -->
+                <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+                    <oj-collapsible id="QuestionCollapsible">
+                      <h6 slot="header">How do I update my account password? </h6>
+                      <p>To change your password, log in and select 'Your profile' in the account menu,
+                         change your password, then press 'Update'.
+
+                        Alternatively, use the 'Lost your password?'' link at the bottom of the login page. 
+                        You will then receive an email from us with a link to update your password. If you haven't received an email, please check your spam folder.
+                      </p>
+                    </oj-collapsible>
+                  </div>
+                </div>
+                <!-- end of Question 3 -->
+
+              </oj-collapsible>
+            </div> <!-- end of Learn More collapsible -->
+          </div><!-- end of EV charging Europe container -->
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
 </div>
