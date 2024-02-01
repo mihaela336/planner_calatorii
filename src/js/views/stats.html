@@ -4,8 +4,210 @@
  as shown at https://oss.oracle.com/licenses/upl/
  -->
 <div class="oj-hybrid-padding">
-  <h1>Customers Content Area</h1>
+  <h1>EV charging stats</h1>
   <div>
-      To change the content of this section, you will make edits to the customers.html file located in the /js/views folder.
+    From market and charging statistics to driver insights, find the latest trends for the EV industry right here.
+  </div>
+  <div>
+    <div id="container">
+      <!-- Begin Main Panel -->
+      <div class="oj-flex demo-flex-display" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+
+        <div class="oj-flex-item oj-panel">
+          <p>With increasing consumer demand and the greater availability of electric models,
+            the number of electric cars in the UK is growing at a rapid rate. As of the end of December 2023,
+            there are now more than 975,000 fully electric cars on UK roads and a further 590,000 plug-in hybrids.</p>
+
+          <p>On this electric vehicle (EV) market stats page, Zapmap tracks the cumulative number of electric vehicles
+            on UK roads,
+            the growth in electric vehicle sales, and the proportion of new car sales that have a plug
+            either battery-electric vehicles or plug-in hybrids. The number of electric vans being sold each month are
+            also tracked.</p>
+
+
+          <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+            <div class="oj-flex-item oj-panel">
+              <h2>How many electric cars are there in the UK?</h2>
+              <p>As of the end of December 2023, there are around 975,000 fully electric cars on UK roads.
+                The chart below shows growth of electric car registrations from 2019 to the present day.</p>
+
+              <p>Nearly 315,000 battery-electric cars were registered in 2023, a growth of 18% on the number registered
+                in 2022.</p>
+              <!-- Begin Tab Bar -->
+              <oj-tab-bar selection="{{selectedItem}}" display="[[medium() ? 'all' : 'icons']]"
+                layout="[[medium() ? 'stretch' : 'condense']]" edge="top" data="[[dataProvider]]" id="tabbar" class="
+            oj-flex
+            oj-sm-justify-content-center
+            oj-md-justify-content-center
+            oj-lg-justify-content-flex-center
+          ">
+                <template slot="itemTemplate" data-oj-as="item">
+                  <li :class="[[{'oj-disabled' : item.data.disabled === 'true'}]]">
+                    <a href="#">
+                      <span :class="[['oj-tabbar-item-icon ' + item.data.icons]]"></span>
+                      <oj-bind-text value="[[item.data.name]]"></oj-bind-text>
+                    </a>
+                  </li>
+                </template>
+              </oj-tab-bar>
+              <!-- End Tab Bar -->
+
+              <!-- Begin Monitor selection -->
+              <div class="oj-label">
+                <div class="oj-sm-padding-3x-vertical">
+                  <label for="curr-selection">Selected List Item:&nbsp;</label>
+                  <span id="curr-selection-value">
+                    <oj-bind-text value="[[selectedItem]]"></oj-bind-text>
+                  </span>
+                </div>
+              </div>
+              <!-- End Monitor selection -->
+
+              <!-- Begin chart area -->
+              <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                <div class="oj-flex-item oj-panel">
+                  <!-- Begin Child Container 1 -->
+                  <div id="containerDiv" class="oj-flex oj-sm-flex-direction-column">
+                    <div class="oj-flex-item oj-sm-margin-4x-vertical">
+                      <oj-combobox-one id="combobox1" value="{{selectedItem}}" label-hint="Selecteaza tipul de grafic"
+                        label-edge="inside" class="oj-form-control-max-width-md">
+                        <oj-option value="pie">Pie</oj-option>
+                        <oj-option value="line">Line</oj-option>
+                        <oj-option value="bar">Bar</oj-option>
+                        <oj-option value="funnel">Funnel</oj-option>
+                        <oj-option value="area">Area</oj-option>
+                        <oj-option value="pyramid">Pyramid</oj-option>
+                      </oj-combobox-one>
+                      <div class="oj-sm-margin-4x-top">
+                        <div>Current selected value</div>
+                        <span>
+                          <oj-bind-text value="[[selectedItem]]"></oj-bind-text>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Child Container 1 -->
+                </div>
+                <div class="oj-flex-item oj-panel">
+                  <!-- Begin Child Container 2 -->
+                  <div id='chart-container'>
+                    <oj-chart id="barChart" type=[[selectedItem]] orientation="[[orientationValue]]"
+                      stack="[[stackValue]]" data="[[dataProviderChart]]" animation-on-display="auto"
+                      animation-on-data-change="auto" hover-behavior="dim">
+                      <template slot='itemTemplate' data-oj-as='item'>
+                        <oj-chart-item value='[[item.data.value]]' group-id='[[ [item.data.group] ]]'
+                          series-id='[[item.data.series]]'>
+                        </oj-chart-item>
+                      </template>
+                    </oj-chart>
+                  </div>
+                  <!-- End Child Container 2 -->
+                </div>
+              </div>
+              <!-- End chart area -->
+
+            </div>
+            <div class="oj-flex-item oj-panel">2b</div>
+          </div>
+          <!-- Begin second chart -->
+          <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+            <div class="oj-flex-item oj-panel">
+                            <h2>How many plug-in cars are there in the UK?</h2>
+              <p>As of the end of December 2023, there were around 1,560,000 plug-in cars, 
+                with around 975,000 battery-electric cars and 590,000 PHEVs registered.</p>
+
+              <p>In 2023, more than 452,000 plug-in hybrid and battery-electric cars were registered, showing a growth of 41% on 2022.
+                 There was also a significant shift away from plug-in hybrids towards battery-electric cars,
+                 with plug-in hybrid sales declining year on year, while battery-electric vehicle sales have increased..</p>
+
+                            <!-- Begin Tab Bar -->
+                            <oj-tab-bar selection="{{selectedItem}}" display="[[medium() ? 'all' : 'icons']]"
+                            layout="[[medium() ? 'stretch' : 'condense']]" edge="top" data="[[dataProvider]]" id="tabbar" class="
+                        oj-flex
+                        oj-sm-justify-content-center
+                        oj-md-justify-content-center
+                        oj-lg-justify-content-flex-center
+                      ">
+                            <template slot="itemTemplate" data-oj-as="item">
+                              <li :class="[[{'oj-disabled' : item.data.disabled === 'true'}]]">
+                                <a href="#">
+                                  <span :class="[['oj-tabbar-item-icon ' + item.data.icons]]"></span>
+                                  <oj-bind-text value="[[item.data.name]]"></oj-bind-text>
+                                </a>
+                              </li>
+                            </template>
+                          </oj-tab-bar>
+                          <!-- End Tab Bar -->
+            
+                          <!-- Begin Monitor selection -->
+                          <div class="oj-label">
+                            <div class="oj-sm-padding-3x-vertical">
+                              <label for="curr-selection">Selected List Item:&nbsp;</label>
+                              <span id="curr-selection-value">
+                                <oj-bind-text value="[[selectedItem]]"></oj-bind-text>
+                              </span>
+                            </div>
+                          </div>
+                          <!-- End Monitor selection -->
+            
+                          <!-- Begin chart area -->
+                          <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+                            <div class="oj-flex-item oj-panel">
+                              <!-- Begin Child Container 1 -->
+                              <div id="containerDiv" class="oj-flex oj-sm-flex-direction-column">
+                                <div class="oj-flex-item oj-sm-margin-4x-vertical">
+                                  <oj-combobox-one id="combobox1" value="{{selectedItem}}" label-hint="Selecteaza tipul de grafic"
+                                    label-edge="inside" class="oj-form-control-max-width-md">
+                                    <oj-option value="pie">Pie</oj-option>
+                                    <oj-option value="line">Line</oj-option>
+                                    <oj-option value="bar">Bar</oj-option>
+                                    <oj-option value="funnel">Funnel</oj-option>
+                                    <oj-option value="area">Area</oj-option>
+                                    <oj-option value="pyramid">Pyramid</oj-option>
+                                  </oj-combobox-one>
+                                  <div class="oj-sm-margin-4x-top">
+                                    <div>Current selected value</div>
+                                    <span>
+                                      <oj-bind-text value="[[selectedItem]]"></oj-bind-text>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- End Child Container 1 -->
+                            </div>
+                            <div class="oj-flex-item oj-panel">
+                              <!-- Begin Child Container 2 -->
+                              <div id='chart-container'>
+                                <oj-chart id="barChart" type=[[selectedItem]] orientation="[[orientationValue]]"
+                                  stack="[[stackValue]]" data="[[dataProviderChart]]" animation-on-display="auto"
+                                  animation-on-data-change="auto" hover-behavior="dim">
+                                  <template slot='itemTemplate' data-oj-as='item'>
+                                    <oj-chart-item value='[[item.data.value]]' group-id='[[ [item.data.group] ]]'
+                                      series-id='[[item.data.series]]'>
+                                    </oj-chart-item>
+                                  </template>
+                                </oj-chart>
+                              </div>
+                              <!-- End Child Container 2 -->
+                            </div>
+                          </div>
+                          <!-- End chart area -->
+            </div>
+          </div>
+          <!-- End second chart -->
+
+        </div>
+
+        <!-- End Main Panel -->
+      </div>
+
+      <span class="oj-sm-margin-4x-top">
+        <oj-checkboxset id="“dir”" value="{{checkValue}}">
+          <oj-option id="“dirColumn”" value="dirColumn">
+            add class 'oj-sm-flex-direction-column'
+          </oj-option>
+        </oj-checkboxset>
+      </span>
+    </div>
   </div>
 </div>

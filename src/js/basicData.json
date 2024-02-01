@@ -1,0 +1,62 @@
+[
+    {
+      "id": 0,
+      "series": "BEV",
+      "group": "2019",
+      "value": 100000
+    },
+    {
+      "id": 1,
+      "series": "PHEV",
+      "group": "2019",
+      "value": 150000
+    },
+    {
+      "id": 2,
+      "series": "BEV",
+      "group": "2020",
+      "value": 200000
+    },
+    {
+      "id": 3,
+      "series": "PHEV",
+      "group": "2020",
+      "value": 250000
+    },
+    {
+      "id": 4,
+      "series": "BEV",
+      "group": "2021",
+      "value": 430000
+    },
+    {
+      "id": 5,
+      "series": "PHEV",
+      "group": "2021",
+      "value": 320000
+    },
+    {
+      "id": 6,
+      "series": "BEV",
+      "group": "2022",
+      "value": 600000
+    },
+    {
+      "id": 7,
+      "series": "PHEV",
+      "group": "2022",
+      "value": 450000
+    },
+    {
+      "id": 8,
+      "series": "BEV",
+      "group": "2023",
+      "value": 950000
+    },
+    {
+      "id": 9,
+      "series": "PHEV",
+      "group": "2023",
+      "value": 600000
+    }
+  ]
