@@ -5,7 +5,7 @@
  -->
 
 
-  
+ <h1>Find available stations </h1>
  <div class="oj-flex oj-sm-flex-items-1">
   <div class="oj-flex-item oj-panel oj-sm-padding-2x-horizontal">
     <div class="oj-typography-heading-md oj-header-border">Available stations</div>
@@ -26,6 +26,16 @@
   <div class="oj-flex-item oj-panel oj-sm-padding-2x-horizontal">
     <div class="oj-typography-heading-md oj-header-border">Station Details</div>
     <oj-module config="[[module.koObservableConfig]]"></oj-module>
+  </div>
+</div>
+<div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+  <div class="oj-flex-item oj-panel oj-sm-margin-4x">
+      <h6>What is the Route Planner? </h6>
+      <p>The Route Planner allows electric vehicle (EV) drivers to plan a route in
+        their electric car based on journey parameters,
+        EV models and driver options. There are three different routing modes: Autoroute, Suggest
+        chargers and Show all chargers.
+        Routes can be saved and retrieved within the mobile app or in-car system.</p>
   </div>
 </div>
 

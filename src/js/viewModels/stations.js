@@ -6,13 +6,13 @@
  * @ignore
  */
 /*
- * Your map ViewModel code goes here
+ * Your Stations ViewModel code goes here
  */
 define(['../accUtils', "text!../stationdetails.json", "knockout", "ojs/ojmodulerouter-adapter", "ojs/ojarraydataprovider",
   "ojs/ojknockout",
   "ojs/ojlistview", "ojs/ojmodule-element"],
   function (accUtils, records, ko, ModuleRouterAdapter, ArrayDataProvider) {
-    function MapViewModel(args) {
+    function StationsViewModel(args) {
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
 
@@ -70,6 +70,10 @@ define(['../accUtils', "text!../stationdetails.json", "knockout", "ojs/ojmoduler
           viewModelPath: 'viewModels/'
       });
 
+      /** form crud drag and drop *** */
+
+      /** end form crud drag and drop *** */
+
       /**
        * Optional ViewModel method invoked after the View is disconnected from the DOM.
        */
@@ -91,6 +95,6 @@ define(['../accUtils', "text!../stationdetails.json", "knockout", "ojs/ojmoduler
      * return a constructor for the ViewModel so that the ViewModel is constructed
      * each time the view is displayed.
      */
-    return MapViewModel;
+    return StationsViewModel;
   }
 );

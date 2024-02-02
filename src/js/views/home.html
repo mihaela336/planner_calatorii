@@ -3,11 +3,107 @@
  Licensed under The Universal Permissive License (UPL), Version 1.0
  as shown at https://oss.oracle.com/licenses/upl/
  -->
- <img src = "css/images/route_planning.jpg" height ="500px" width="100%">
+<img src="css/images/route_planning.jpg" height="500px" width="100%">
 <div class="oj-hybrid-padding">
 
   <h1>Dashboard Content Area</h1>
   <div>
-      To change the content of this section, you will make edits to the dashboard.html file located in the /js/views folder.
+    To change the content of this section, you will make edits to the dashboard.html file located in the /js/views
+    folder.
+  </div>
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+
+  <div id="tableDemo">
+  <!-- Begin Table demo -->
+  <div class="oj-flex oj-panel oj-bg-info-30">
+    <h4> Situația școlară a studenților din anul I </h4>
+    </div>
+    <oj-messages messages="[[messageArray]]"></oj-messages>
+
+  <div class="oj-flex oj-panel oj-bg-info-30">
+    <div class="oj-flex-item ">
+      <oj-validation-group valid="{{groupValid}}"></oj-validation-group>
+
+  <!-- Begin form layout -->
+  <oj-form-layout>
+    <oj-input-number id="departmentIdInput" max="2000" min="0" label-hint="Department Id" 
+    value="{{inputDepartmentId}}" converter="[[converter]]"></oj-input-number>
+    <oj-input-text id="departmentNameInput" label-hint="Department Name" value="{{inputDepartmentName}}"></oj-input-text>
+    <oj-input-number id="locationIdInput" label-hint="Location Id" max="2000" min="0" 
+    value="{{inputLocationId}}" converter="[[converter]]"></oj-input-number>
+    <oj-input-number id="managerIdInput" label-hint="Manager Id" max="2000" min="0" value="{{inputManagerId}}"
+      converter="[[converter]]"></oj-input-number>
+    <!-- End form layout -->
+  </oj-form-layout>
+  <oj-toolbar chroming="outlined">
+    <oj-button id="addbutton" on-oj-action="[[addRow]]" disabled="[[disableCreate]]">
+      Create
+    </oj-button>
+    <oj-button
+      id="updateButton"
+      on-oj-action="[[updateRow]]"
+      disabled="[[disableRemoveUpdate]]">
+      Update
+    </oj-button>
+    <oj-button
+      id="removeButton"
+      on-oj-action="[[removeRow]]"
+      disabled="[[disableRemoveUpdate]]">
+      Remove
+    </oj-button>
+    <oj-button
+      id="removeAllButton"
+      on-oj-action="[[removeAllRow]]"
+      disabled="[[isEmptyTable]]">
+      Remove All
+    </oj-button>
+  </oj-toolbar>
+</oj-validation-group>
+</div>
+
+  <!-- Begin table -->
+  <div id="tableContainer" class="oj-flex-item oj-sm-padding-2x-horizontal">
+    <oj-table
+      id="table"
+      aria-label="Departments Table"
+      accessibility.row-header="depName"
+      class="demo-table-container oj-helper-text-align-center"
+      data="[[dataprovider]]"
+      columns='[{"headerText": "Department Id", "field": "DepartmentId", "id": "depId"},
+                {"headerText": "Department Name", "field": "DepartmentName", "id": "depName"},
+                {"headerText": "Location Id", "field": "LocationId", "id": "locId"},
+                {"headerText": "Manager Id", "field": "ManagerId", "id": "manId"}]'
+      selection-mode.row="single"
+      first-selected-row="{{firstSelected}}"
+      on-first-selected-row-changed="[[firstSelectedRowChangedListener]]"></oj-table>
+    
+    <div
+    id="noDataDiv"
+    class="oj-flex demo-table-container oj-helper-text-align-center oj-sm-hide">
+    <div class="oj-flex-item oj-sm-align-self-center">
+      <span>No data available. Please use the form controls to create a new row.</span>
+    </div>
+  </div>
+  <oj-toolbar chroming="outlined">
+    <oj-button id="resetButton" on-oj-action="[[resetRows]]" disabled="[[disableSubmit]]">
+      Reset Changes
+    </oj-button>
+    <oj-button id="submitButton" on-oj-action="[[submitRows]]" disabled="[[disableSubmit]]">
+      Submit Changes
+    </oj-button>
+  </oj-toolbar>
+</div>
+
+  </div>
+      
+
+  <!-- Begin Buffered Chnges -->
+  <div>
+    <oj-label for="bufferContent">Buffered Changes:</oj-label>
+    <oj-text-area id="bufferContent" rows="10" class="demo-table-textarea"></oj-text-area>
+      <!-- End Buffered Chnges -->
+  </div>
+  <!-- End Table demo -->
+  </div>
   </div>
 </div>
