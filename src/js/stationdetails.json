@@ -2,49 +2,42 @@
     "stations": [
       {
         "stationId": 100,
-        "stationType": 1000,
         "name": "Station 1",
         "adress": "Adress of Station 1",
         "status": "Free"
       },
       {
         "stationId": 101,
-        "stationType": 1000,
         "name": "Station 2",
         "adress": "Adress of Station 2",
         "status": "Free"
       },
       {
         "stationId": 102,
-        "stationType": 1001,
         "name": "Station 3",
         "adress": "Adress of Station 3",
         "status": "Occupied"
       },
       {
         "stationId": 103,
-        "stationType": 1001,
         "name": "Station 4",
         "adress": "Adress of Station 4",
         "status": "Free"
       },
       {
         "stationId": 104,
-        "stationType": 1001,
         "name": "Station 5",
         "adress": "Adress of Station 5",
         "status": "Occupied"
       },
       {
         "stationId": 105,
-        "stationType": 1002,
         "name": "Station 6",
         "adress": "Adress of Station 6",
         "status": "Occupied"
       },
       {
         "stationId": 106,
-        "stationType": 1002,
         "name": "Station 7",
         "adress": "Adress of Station 7",
         "status": "Free"

@@ -28,6 +28,112 @@
     <oj-module config="[[module.koObservableConfig]]"></oj-module>
   </div>
 </div>
+
+    <div id="tableDemo">
+      <!-- Begin Table demo -->
+      <div class="oj-flex oj-panel oj-bg-info-30">
+        <h4> Update Stations </h4>
+        </div>
+        <oj-messages messages="[[messageArray]]"></oj-messages>
+    
+      <div class="oj-flex oj-panel oj-bg-info-30">
+        <div class="oj-flex-item ">
+          <oj-validation-group valid="{{groupValid}}"></oj-validation-group>
+    
+      <!-- Begin form layout -->
+      <oj-form-layout>
+        <oj-input-number id="StationIdInput" max="2000" min="0"
+           label-hint="Station Id" 
+        value="{{inputStation}}" converter="[[converter]]"></oj-input-number>
+        <oj-input-text id="StationNameInput" label-hint="Station Name" value="{{inputStationName}}">
+        </oj-input-text>
+        <oj-input-text id="StationAdressInput" label-hint="Station Adress" value="{{inputStationAdress}}">
+        </oj-input-text>
+        <oj-input-text id="StatusInput" label-hint="Station Status" value="{{inputStatus}}">
+        </oj-input-text>
+    
+        <!-- End form layout -->
+      </oj-form-layout>
+      <oj-toolbar chroming="outlined">
+        <oj-button id="addbutton" on-oj-action="[[addRow]]" disabled="[[disableCreate]]">
+          Create
+        </oj-button>
+        <oj-button
+          id="updateButton"
+          on-oj-action="[[updateRow]]"
+          disabled="[[disableRemoveUpdate]]">
+          Update
+        </oj-button>
+        <oj-button
+          id="removeButton"
+          on-oj-action="[[removeRow]]"
+          disabled="[[disableRemoveUpdate]]">
+          Remove
+        </oj-button>
+        <oj-button
+          id="removeAllButton"
+          on-oj-action="[[removeAllRow]]"
+          disabled="[[isEmptyTable]]">
+          Remove All
+        </oj-button>
+      </oj-toolbar>
+    </oj-validation-group>
+    </div>
+    
+      <!-- Begin table -->
+      <div id="tableContainer" class="oj-flex-item oj-sm-padding-2x-horizontal">
+        <oj-table
+          id="table"
+          aria-label="Departments Table"
+          accessibility.row-header="depName"
+          class="demo-table-container oj-helper-text-align-center"
+          data="[[dataprovider]]"
+          columns='[{"headerText": "Station Id", "field": "stationId"},
+                    {"headerText": "Station Name", "field": "name"},
+                    {"headerText": "Station Adress", "field": "adress"},
+                    {"headerText": "Station Status", "field": "status"}]'
+          selection-mode.row="single"
+          first-selected-row="{{firstSelected}}"
+          on-first-selected-row-changed="[[firstSelectedRowChangedListener]]"></oj-table>
+        
+        <div
+        id="noDataDiv"
+        class="oj-flex demo-table-container oj-helper-text-align-center oj-sm-hide">
+        <div class="oj-flex-item oj-sm-align-self-center">
+          <span>No data available. Please use the form controls to create a new row.</span>
+        </div>
+      </div>
+      <oj-toolbar chroming="outlined">
+        <oj-button id="resetButton" on-oj-action="[[resetRows]]" disabled="[[disableSubmit]]">
+          Reset Changes
+        </oj-button>
+        <oj-button id="submitButton" on-oj-action="[[submitRows]]" disabled="[[disableSubmit]]">
+          Submit Changes
+        </oj-button>
+      </oj-toolbar>
+    </div>
+    
+      </div>
+      <!-- Begin calcul medie pannel -->
+      <div class ="oj-flex oj-border oj-pannel oj-bg-info-30">
+          <oj-form-layout>
+            <oj-input-text id="NrInput" label-hint="Nr. Matricol" value="{{inputStation}}" readonly="true"></oj-input-text>
+            <oj-input-text id="NumeStationAdressAdress" label-hint="Nume Prenume" value="{{inputStationName}}" readonly="true"></oj-input-text>
+            <oj-input-text id="MediaInput" label-hint="Media" value="{{inputMedia}}" readonly="true"></oj-input-text>
+          </oj-form-layout>
+      </div>
+        <!-- End calcul medie pannel -->
+          
+    
+      <!-- Begin Buffered Chnges -->
+      <div>
+        <oj-label for="bufferContent">Buffered Changes:</oj-label>
+        <oj-text-area id="bufferContent" rows="10" class="demo-table-textarea"></oj-text-area>
+          <!-- End Buffered Chnges -->
+      </div>
+      <!-- End Table demo -->
+      </div>
+
 <div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
   <div class="oj-flex-item oj-panel oj-sm-margin-4x">
       <h6>What is the Route Planner? </h6>
