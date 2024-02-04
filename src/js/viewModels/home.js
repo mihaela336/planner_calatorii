@@ -8,7 +8,7 @@
 /*
  * Your Home ViewModel code goes here
  */
-define(['../accUtils', "knockout",  "ojs/ojarraydataprovider", "ojs/ojbufferingdataprovider", "ojs/ojkeyset", "ojs/ojconverter-number", "text!../departmentData.json",
+define(['../accUtils', "knockout",  "ojs/ojarraydataprovider", "ojs/ojbufferingdataprovider", "ojs/ojkeyset", "ojs/ojconverter-number", "text!../crud.json",
 "ojs/ojknockout",
 "ojs/ojinputtext", "ojs/ojinputnumber", "ojs/ojlabel", "ojs/ojvalidationgroup", "ojs/ojformlayout", "ojs/ojtoolbar", "ojs/ojmessages", "ojs/ojtable"],
  function(accUtils, ko, ArrayDataProvider, BufferingDataProvider, ojkeyset_1, NumberConverter, deptData) {
@@ -27,7 +27,7 @@ define(['../accUtils', "knockout",  "ojs/ojarraydataprovider", "ojs/ojbufferingd
       this.deptArray = JSON.parse(deptData);
       this.deptObservableArray = ko.observableArray(this.deptArray);
       this.dataprovider = new BufferingDataProvider(new ArrayDataProvider(this.deptObservableArray, {
-          keyAttributes: 'DepartmentId'
+          keyAttributes: 'NumarMatricol'
       }));
       this.converter = new NumberConverter.IntlNumberConverter({
           useGrouping: false
@@ -36,15 +36,17 @@ define(['../accUtils', "knockout",  "ojs/ojarraydataprovider", "ojs/ojbufferingd
       this.messageArray = ko.observableArray();
       this.groupValid = ko.observable();
       // intialize the observable values in the forms
-      this.inputDepartmentId = ko.observable();
-      this.inputDepartmentName = ko.observable();
-      this.inputLocationId = ko.observable();
-      this.inputManagerId = ko.observable();
+      this.inputMatricol = ko.observable(0);
+      this.inputNume = ko.observable();
+      this.inputPrenume = ko.observable();
+      this.inputAlg = ko.observable(0);
+      this.inputAsc = ko.observable(0);
+      this.inputGeom = ko.observable(0);
       this.firstSelected = ko.observable();
       this.disableSubmit = ko.observable(true);
       // Return true if the Create button should be disabled
       this.disableCreate = ko.computed(() => {
-          return !this.inputDepartmentId() || this.groupValid() === 'invalidShown';
+          return !this.inputMatricol() || this.groupValid() === 'invalidShown';
       });
       // Return true if the Remove and Update buttons should be disabled
       this.disableRemoveUpdate = ko.computed(() => {
@@ -55,13 +57,15 @@ define(['../accUtils', "knockout",  "ojs/ojarraydataprovider", "ojs/ojbufferingd
       this.addRow = () => {
           if (this.groupValid() !== 'invalidShown') {
               const dept = {
-                  DepartmentId: this.inputDepartmentId(),
-                  DepartmentName: this.inputDepartmentName(),
-                  LocationId: this.inputLocationId(),
-                  ManagerId: this.inputManagerId()
+                  NumarMatricol: this.inputMatricol(),
+                  Nume: this.inputNume(),
+                  Prenume: this.inputPrenume(),
+                  Algoritmi: this.inputAlg(),
+                  ASC: this.inputAsc(),
+                  Geometrie: this.inputGeom()
               };
               this.dataprovider.addItem({
-                  metadata: { key: dept.DepartmentId },
+                  metadata: { key: dept.NumarMatricol },
                   data: dept
               });
           }
@@ -73,12 +77,14 @@ define(['../accUtils', "knockout",  "ojs/ojarraydataprovider", "ojs/ojbufferingd
               const currentRow = element
                   .currentRow;
               if (currentRow != null) {
-                  const key = this.inputDepartmentId();
+                  const key = this.inputMatricol();
                   const newData = {
-                      DepartmentId: this.inputDepartmentId(),
-                      DepartmentName: this.inputDepartmentName(),
-                      LocationId: this.inputLocationId(),
-                      ManagerId: this.inputManagerId()
+                    NumarMatricol: this.inputMatricol(),
+                    Nume: this.inputNume(),
+                    Prenume: this.inputPrenume(),
+                    Algoritmi: this.inputAlg(),
+                    ASC: this.inputAsc(),
+                    Geometrie: this.inputGeom()
                   };
                   this.dataprovider.updateItem({ metadata: { key: key }, data: newData });
               }
@@ -227,10 +233,12 @@ define(['../accUtils', "knockout",  "ojs/ojarraydataprovider", "ojs/ojbufferingd
           const itemContext = event.detail.value;
           if (itemContext && itemContext.data) {
               const dept = itemContext.data;
-              this.inputDepartmentId(dept.DepartmentId);
-              this.inputDepartmentName(dept.DepartmentName);
-              this.inputLocationId(dept.LocationId);
-              this.inputManagerId(dept.ManagerId);
+              this.inputMatricol(dept.NumarMatricol);
+              this.inputNume(dept.Nume);
+              this.inputPrenume(dept.Prenume);
+              this.inputAlg(dept.Algoritmi);
+              this.inputAsc(dept.ASC);
+              this.inputGeom(dept.Geometrie);
           }
       };
       this.hideTable = (hide) => {
@@ -261,6 +269,16 @@ define(['../accUtils', "knockout",  "ojs/ojarraydataprovider", "ojs/ojbufferingd
           this.hideTable(newValue);
       });
       this.isEmptyTable(this.dataprovider.isEmpty() === 'yes');
+
+    /***Calcul Media***/
+    this.inputNumePrenume =ko.computed(function() {
+        return this.inputNume()+ " " + this.inputPrenume();
+    }.bind(this));
+
+    this.inputMedia =ko.computed(function() {
+        var ma= (this.inputAlg() + this.inputAsc() + this.inputGeom())/3;
+        return ma.toFixed(2);
+    }.bind(this));
 
       this.connected = () => {
         accUtils.announce('Home page loaded.', 'assertive');

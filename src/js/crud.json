@@ -1,0 +1,10 @@
+[{ "NumarMatricol": 10, "Nume": "Ionescu", "Prenume": "Maria", "Algoritmi": 10, "ASC": 9, "Geometrie": 10 },
+{ "NumarMatricol": 20, "Nume": "Popescu", "Prenume": "Ioana", "Algoritmi": 9, "ASC": 9, "Geometrie": 7 },
+{ "NumarMatricol": 30, "Nume": "Dumitru", "Prenume": "Camila", "Algoritmi": 9, "ASC": 10, "Geometrie": 9 },
+{ "NumarMatricol": 40, "Nume": "Georgescu", "Prenume": "Gina", "Algoritmi": 8, "ASC": 10, "Geometrie": 10 },
+{ "NumarMatricol": 50, "Nume": "Popa", "Prenume": "Ana", "Algoritmi": 7, "ASC": 8, "Geometrie": 9 },
+{ "NumarMatricol": 60, "Nume": "Nicolae", "Prenume": "Dana", "Algoritmi": 9, "ASC": 10, "Geometrie": 8 },
+{ "NumarMatricol": 70, "Nume": "Ionescu", "Prenume": "Raul", "Algoritmi": 8, "ASC": 9, "Geometrie": 10 },
+{ "NumarMatricol": 80, "Nume": "Papa", "Prenume": "Amalia", "Algoritmi": 8, "ASC": 8, "Geometrie": 9 },
+{ "NumarMatricol": 90, "Nume": "Soare", "Prenume": "Vasile", "Algoritmi": 10, "ASC": 10, "Geometrie": 10 },
+{ "NumarMatricol": 100, "Nume": "Marinescu", "Prenume": "Dan", "Algoritmi": 9, "ASC": 10, "Geometrie": 9 } ]
