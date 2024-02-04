@@ -4,43 +4,50 @@
         "stationId": 100,
         "name": "Station 1",
         "adress": "Adress of Station 1",
-        "status": "Free"
+        "status": "Free",
+        "chargingSessions": 50
       },
       {
         "stationId": 101,
         "name": "Station 2",
         "adress": "Adress of Station 2",
-        "status": "Free"
+        "status": "Free",
+        "chargingSessions": 187
       },
       {
         "stationId": 102,
         "name": "Station 3",
         "adress": "Adress of Station 3",
-        "status": "Occupied"
+        "status": "Occupied",
+        "chargingSessions": 123
       },
       {
         "stationId": 103,
         "name": "Station 4",
         "adress": "Adress of Station 4",
-        "status": "Free"
+        "status": "Free",
+        "chargingSessions": 75
       },
       {
         "stationId": 104,
         "name": "Station 5",
         "adress": "Adress of Station 5",
-        "status": "Occupied"
+        "status": "Occupied",
+        "chargingSessions": 240
       },
       {
         "stationId": 105,
         "name": "Station 6",
         "adress": "Adress of Station 6",
-        "status": "Occupied"
+        "status": "Occupied",
+        "chargingSessions": 7
       },
       {
         "stationId": 106,
         "name": "Station 7",
         "adress": "Adress of Station 7",
-        "status": "Free"
+        "status": "Free",
+        "chargingSessions": 88
       }
     ]
   }

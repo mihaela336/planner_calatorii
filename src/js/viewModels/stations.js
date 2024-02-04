@@ -87,6 +87,7 @@ define(['../accUtils', "text!../stationdetails.json", "knockout", "ojs/ojmoduler
       this.inputStationName = ko.observable();
       this.inputStationAdress = ko.observable();
       this.inputStatus = ko.observable();
+      this.inputChargingSessions = ko.observable();
       this.firstSelected = ko.observable();
       this.disableSubmit = ko.observable(true);
       // Return true if the Create button should be disabled
@@ -105,7 +106,8 @@ define(['../accUtils', "text!../stationdetails.json", "knockout", "ojs/ojmoduler
                   stationId: this.inputStation(),
                   name: this.inputStationName(),
                   adress: this.inputStationAdress(),
-                  status: this.inputStatus()
+                  status: this.inputStatus(),
+                  chargingSessions: this.inputChargingSessions()
               };
               this.dataprovider.addItem({
                   metadata: { key: dept.stationId },
@@ -125,7 +127,8 @@ define(['../accUtils', "text!../stationdetails.json", "knockout", "ojs/ojmoduler
                     stationId: this.inputStation(),
                     name: this.inputStationName(),
                     adress: this.inputStationAdress(),
-                    status: this.inputStatus()
+                    status: this.inputStatus(),
+                    chargingSessions: this.inputChargingSessions()
                   };
                   this.dataprovider.updateItem({ metadata: { key: key }, data: newData });
               }
@@ -278,6 +281,7 @@ define(['../accUtils', "text!../stationdetails.json", "knockout", "ojs/ojmoduler
               this.inputStationName(dept.name);
               this.inputStationAdress(dept.adress);
               this.inputStatus(dept.status);
+              this.inputChargingSessions(dept.chargingSessions);
           }
       };
       this.hideTable = (hide) => {
